@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class MenuExample {
+
+	public static void main(String[] args) {
+		int choice;
+		double a,b,c;
+		Scanner sc=new Scanner(System.in);
+		while(true)
+		{
+		System.out.println("1. Addition");
+		System.out.println("2. Subtraction");
+		System.out.println("3. Division");
+		System.out.println("4. Multiplication");
+		System.out.println("5. Exit");
+		System.out.println("Choice");
+		choice=sc.nextInt();
+		
+			switch(choice) 
+			{
+			case 1: System.out.println("enter a");
+			        a=sc.nextInt();
+			        System.out.println("enter b");
+			        b=sc.nextInt();
+			        c=a+b;
+			        System.out.println("sum="+c);
+			        break;
+			case 2: System.out.println("enter a");
+	                a=sc.nextInt();
+	                System.out.println("enter b");
+	                b=sc.nextInt();
+	                c=a-b;
+	                System.out.println("difference="+c);
+         	        break;
+
+			case 3: System.out.println("enter a");
+	                a=sc.nextInt();
+	                System.out.println("enter b");
+	                b=sc.nextInt();
+	                c=a/b;
+	                System.out.println("division="+c);
+         	        break;
+
+			case 4: System.out.println("enter a");
+	                a=sc.nextInt();
+	                System.out.println("enter b");
+	                b=sc.nextInt();
+	                c=a*b;
+	                System.out.println("product="+c);
+         	        break;
+			case 5: System.exit(0);
+			       break;
+			}
+             
+			        
+			}
+
+	}
+
+}

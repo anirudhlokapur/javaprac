@@ -1,0 +1,77 @@
+class Account{
+	int accountNumber;
+	String name;
+	float amount;
+	
+	//insert method
+	void insert(int a,String n,float amt){
+		accountNumber=a;
+		name=n;
+		amount=amt;
+	}
+	
+	//deposit method
+	void deposit(float amt){
+		amount=amount+amt;
+		System.out.println(amount+" deposited");
+	}
+	
+	//withdraw amount
+	void withdraw(float amt){
+		if(amt>amount){
+			System.out.println("Insufficient Balance");
+		}else{
+		amount=amount-amt;
+		System.out.println("Remaining balance= "+amount);
+		}
+			
+	}
+	//display balance method
+	void checkBalance(){
+		System.out.println("The balance is "+amount);
+	}
+	
+	//display account details
+	void display(){
+		System.out.println(accountNumber+" "+name+" "+amount);
+		
+	}
+}
+public class TestAccount {
+
+	public static void main(String[] args) {
+		
+		//creating account objects
+		Account a1=new Account();
+		
+		
+		//inserting values into account
+		a1.insert(101, "Anirudh", 1200);
+		
+		
+		//show the balance
+		a1.checkBalance();
+		
+		
+		//deposit amount into account
+		a1.deposit(1200);
+		
+		//show the balance
+		a1.checkBalance();
+		
+		//withdraw amount
+		a1.withdraw(5000);
+		
+		
+		//show the balance
+	    a1.checkBalance();
+		
+		
+		//show account details
+		a1.display();
+		
+		
+
+	}
+
+}

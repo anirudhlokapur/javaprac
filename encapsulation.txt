@@ -1,0 +1,72 @@
+EMPLOYEE.java
+
+
+package com.capgemini.beans;
+
+public class Employee {
+
+	private int EmployeeNumber;
+	private String Name;
+	public int getEmployeeNumber() {
+		return EmployeeNumber;
+	}
+	public void setEmployeeNumber(int employeeNumber) {
+		EmployeeNumber = employeeNumber;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	
+}
+
+TEST.java
+
+package com.capgemini.service;
+
+import java.util.Scanner;
+
+import org.omg.Messaging.SyncScopeHelper;
+
+import com.capgemini.beans.Employee;
+
+public class Test {
+
+	public static void main(String[] args) {
+		int eno;
+		String name;
+		Employee[] emps= new Employee[3];
+		emps[0]= new Employee();
+		emps[1]= new Employee();
+		emps[2]= new Employee();
+		Scanner sc= new Scanner(System.in);
+		
+		for(int i=0;i<3;i++)
+		{
+		System.out.println("enter employee number");
+		emps[i].setEmployeeNumber(sc.nextInt());
+		System.out.println("enter employee name ");
+		emps[i].setName(sc.next());
+		}
+		
+		for(int j=0;j<3;j++)
+		{
+		System.out.println(" employee number");
+		System.out.println(emps[j].getEmployeeNumber());
+		System.out.println(" employee name ");
+		System.out.println(emps[j].getName());		
+		}
+		
+		
+
+	}
+
+}
+
+
+
+
+
+

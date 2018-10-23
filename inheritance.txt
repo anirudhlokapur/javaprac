@@ -1,0 +1,40 @@
+
+//creating the parent class
+class Kingdom{
+	void live(){
+		System.out.println("living");
+	}
+}
+
+
+//creating the first child class
+class Animal extends Kingdom{
+	void eat(){
+		System.out.println("eating");
+	}
+}
+
+
+//creating the second child class
+class Canine extends Animal{
+	void bark(){
+		System.out.println("barking");
+	}
+}
+
+public class Dog extends Kingdom {
+
+	public static void main(String[] args) {
+		//new object of Canine
+		Canine c=new Canine();
+		
+		c.bark();
+		c.eat();
+		c.live();
+		
+		
+		
+
+	}
+
+}

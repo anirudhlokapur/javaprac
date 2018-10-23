@@ -1,0 +1,37 @@
+
+public class BikeClass {
+	int price;
+	String name;
+	int hp;
+	
+	//creating constructor
+	BikeClass(int p, String n){
+		price=p;
+		name=n;
+	}
+	
+	//copying the constructor values in another constructor
+	BikeClass(BikeClass q){
+		price=q.price;
+		name=q.name;
+		
+	}
+	
+	void display(){
+		System.out.println(price+" "+name+" "+hp);
+	}
+	
+
+	public static void main(String[] args) {
+		
+		//calling the constructor values into b from a
+		BikeClass a=new BikeClass(91000,"Apache");
+		BikeClass b=new BikeClass(a);
+		
+		a.display();
+		b.display();
+		
+
+	}
+
+}

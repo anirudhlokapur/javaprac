@@ -1,0 +1,483 @@
+ import java.util.Scanner;
+ 
+2  
+ 
+3  
+ 
+4  
+ 
+5  public class Admin {
+ 
+6  
+ 
+7  
+ 
+8  
+ 
+9  	private static Scanner sc=new Scanner(System.in);
+ 
+10  
+ 
+11  	private static StudentSchedular studSch = new StudentSchedular();
+ 
+12  
+ 
+13  	public static void main(String[] args) {
+ 
+14  
+ 
+15  		showMenu();
+ 
+16  
+ 
+17  	}
+ 
+18  
+ 
+19  
+ 
+20  
+ 
+21  	private static void showMenu() {
+ 
+22  
+ 
+23  		
+ 
+24  
+ 
+25  		int choice;
+ 
+26  
+ 
+27  		
+ 
+28  
+ 
+29  		while(true)
+ 
+30  
+ 
+31  		{
+ 
+32  
+ 
+33  			System.out.println("1.add student");
+ 
+34  
+ 
+35  			System.out.println("2.show all students");
+ 
+36  
+ 
+37  			System.out.println("3.exit");
+ 
+38  
+ 
+39  			
+ 
+40  
+ 
+41  			System.out.println("Enter your choice");
+ 
+42  
+ 
+43  			choice=sc.nextInt();
+ 
+44  
+ 
+45  			
+ 
+46  
+ 
+47  			
+ 
+48  
+ 
+49  			switch(choice)
+ 
+50  
+ 
+51  			{
+ 
+52  
+ 
+53  			case 1:addStudentDetails();
+ 
+54  
+ 
+55  			       break;
+ 
+56  
+ 
+57  			       
+ 
+58  
+ 
+59  			 case 2:showAllStudents();
+ 
+60  
+ 
+61  			        break;
+ 
+62  
+ 
+63  			 default:System.out.println("Sorry entered wrong choice");
+ 
+64  
+ 
+65  				   
+ 
+66  
+ 
+67  			  
+ 
+68  
+ 
+69  				   
+ 
+70  
+ 
+71  			   
+ 
+72  
+ 
+73  			}
+ 
+74  
+ 
+75  			
+ 
+76  
+ 
+77  		}
+ 
+78  
+ 
+79  		
+ 
+80  
+ 
+81  	}
+ 
+82  
+ 
+83  
+ 
+84  
+ 
+85  	private static void showAllStudents() {
+ 
+86  
+ 
+87  		studSch.showAllStudents();
+ 
+88  
+ 
+89  		
+ 
+90  
+ 
+91  	}
+ 
+92  
+ 
+93  
+ 
+94  
+ 
+95  	private static void addStudentDetails() {
+ 
+96  
+ 
+97  		System.out.println("Enter roll number");
+ 
+98  
+ 
+99  		int rollNumber=sc.nextInt();
+ 
+100  
+ 
+101  		
+ 
+102  
+ 
+103  		System.out.println("Enter name");
+ 
+104  
+ 
+105  		String name = sc.next();
+ 
+106  
+ 
+107  		
+ 
+108  
+ 
+109  		System.out.println(studSch.addStudent(rollNumber, name));
+ 
+110  
+ 
+111  		
+ 
+112  
+ 
+113  	}
+ 
+114  
+ 
+115  
+ 
+116  
+ 
+117  }
+ 
+118  
+ 
+119  
+ 
+120  
+ 
+121  
+ 
+122  
+ 
+123  
+ 
+124  
+ 
+125  
+ 
+126  
+ 
+127  
+ 
+128  public class Student {
+ 
+129  
+ 
+130  	
+ 
+131  
+ 
+132  	private int rollNumber;
+ 
+133  
+ 
+134  	private String name;
+ 
+135  
+ 
+136  	
+ 
+137  
+ 
+138  	
+ 
+139  
+ 
+140  	public Student(int rollNumber, String name) {
+ 
+141  
+ 
+142  		super();
+ 
+143  
+ 
+144  		this.rollNumber = rollNumber;
+ 
+145  
+ 
+146  		this.name = name;
+ 
+147  
+ 
+148  	}
+ 
+149  
+ 
+150  	public int getRollNumber() {
+ 
+151  
+ 
+152  		return rollNumber;
+ 
+153  
+ 
+154  	}
+ 
+155  
+ 
+156  	public void setRollNumber(int rollNumber) {
+ 
+157  
+ 
+158  		this.rollNumber = rollNumber;
+ 
+159  
+ 
+160  	}
+ 
+161  
+ 
+162  	public String getName() {
+ 
+163  
+ 
+164  		return name;
+ 
+165  
+ 
+166  	}
+ 
+167  
+ 
+168  	public void setName(String name) {
+ 
+169  
+ 
+170  		this.name = name;
+ 
+171  
+ 
+172  	}
+ 
+173  
+ 
+174  	
+ 
+175  
+ 
+176  	
+ 
+177  
+ 
+178  
+ 
+179  
+ 
+180  }
+ 
+181  
+ 
+182  
+ 
+183  
+ 
+184  
+ 
+185  
+ 
+186  
+ 
+187  
+ 
+188  
+ 
+189  
+ 
+190  
+ 
+191  
+ 
+192  
+ 
+193  
+ 
+194  
+ 
+195  
+ 
+196  
+ 
+197  
+ 
+198  public class StudentSchedular {
+ 
+199  
+ 
+200  	
+ 
+201  
+ 
+202  	private Student[] students = new Student[10];
+ 
+203  
+ 
+204  	private int counterStudent;
+ 
+205  
+ 
+206  	
+ 
+207  
+ 
+208  	public String addStudent(int rollNumber,String name)
+ 
+209  
+ 
+210  	{
+ 
+211  
+ 
+212  		
+ 
+213  
+ 
+214  		students[counterStudent++]=new Student(rollNumber,name);
+ 
+215  
+ 
+216  		return "Student added successfully";
+ 
+217  
+ 
+218  		
+ 
+219  
+ 
+220  	}
+ 
+221  
+ 
+222  	
+ 
+223  
+ 
+224  	public void showAllStudents()
+ 
+225  
+ 
+226  	{
+ 
+227  
+ 
+228  		for(int i=0;i<counterStudent;i++)
+ 
+229  
+ 
+230  		{
+ 
+231  
+ 
+232  			System.out.println(students[i].getRollNumber());
+ 
+233  
+ 
+234  			System.out.println(students[i].getName());
+ 
+235  
+ 
+236  		}
+ 
+237  
+ 
+238  	}
+ 
+239  
+ 
+240  
+ 
+241  
+ 
+242  } 

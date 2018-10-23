@@ -1,0 +1,22 @@
+import java.util.HashSet;
+
+public class HashSetTest {
+
+	public static void main(String[] args) {
+		HashSet<String> h=new HashSet<String>();
+		//adding elements into hash set using add method that is predefined
+		h.add("Anirudh");
+		h.add("Lokapur");
+		h.add("Myself");
+		h.add("Anirudh");
+		//displaying the contents of the hash set 
+		System.out.println(h);
+		//removing element from hash set
+		h.remove("Myself");
+		System.out.println(h);
+		
+		
+
+	}
+
+}

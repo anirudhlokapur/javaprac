@@ -1,0 +1,35 @@
+
+public class BikeClass {
+	int price;
+	String name;
+	int hp;
+	
+	//creating constructor
+	BikeClass(int p, String n){
+		price=p;
+		name=n;
+	}
+	
+	//overloading the constructor
+	BikeClass(int p, String n, int h){
+		price=p;
+		name=n;
+		hp=h;
+	}
+	
+	void display(){
+		System.out.println(price+" "+name+" "+hp);
+	}
+	
+
+	public static void main(String[] args) {
+		BikeClass a=new BikeClass(91000,"Apache");
+		BikeClass b=new BikeClass(90000, "Pulsar",18);
+		
+		a.display();
+		b.display();
+		
+
+	}
+
+}

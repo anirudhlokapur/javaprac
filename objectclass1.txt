@@ -1,0 +1,35 @@
+class Studnt{                               //This class is created while coding
+	int id=10;                              //Declaration of instance variables
+	String name="Anirudh";
+}
+public class Students {                      //This class is created in the beginning
+
+	public static void main(String[] args) {
+		Studnt s1=new Studnt();              //Declaration of object 
+		System.out.println(s1.id);           //Display the contents of object
+		System.out.println(s1.name);
+		
+
+	}
+
+
+
+class Employee{
+	int empid=10;
+	String name="Anirudh";
+}
+
+
+
+public class EmployeeDetails {
+
+	public static void main(String[] args) {
+		
+		Employee e1=new Employee();
+		System.out.println(e1.empid);
+		System.out.println(e1.name);
+		
+
+	}
+
+}

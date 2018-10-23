@@ -1,0 +1,89 @@
+//creating the parent class
+class Vehicle{
+	void run(){
+		System.out.println("The vehicle is running");
+	}
+}
+
+//creating the child class
+class Bike extends Vehicle{
+	void run(){
+		System.out.println("The bike is running");
+	}
+}
+
+public class MethodOverriding {
+
+	public static void main(String[] args) {
+		//creating an instance of child class
+		Bike b2=new Bike();
+		
+		//calling the method of bike class
+		b2.run();
+		
+		//creating an instance of parent class
+		Vehicle v2=new Vehicle();
+		
+		//calling the method of vehicle class
+		v2.run();
+		
+
+	}
+
+}
+
+
+
+
+
+
+
+
+//real life example
+
+//creating parent class
+class Bank{
+	int getRateOfInterest(){
+		return 0;
+	}
+	
+}
+
+//creating child classes
+class SBI extends Bank{
+	int getRateOfInterest(){
+		return 7;
+	}
+}
+
+
+
+class Citi extends Bank{
+	int getRateOfInterest(){
+		return 8;
+	}
+}
+
+
+class Icici extends Bank{
+	int getRateOfInterest(){
+		return 9;
+	}
+}
+
+
+public class Bank_Example {
+
+	public static void main(String[] args) {
+		SBI s=new SBI();
+		Citi c=new Citi();
+		Icici i=new Icici();
+		
+		System.out.println(s.getRateOfInterest());
+		System.out.println(c.getRateOfInterest());
+		System.out.println(i.getRateOfInterest());
+
+	}
+
+}
+

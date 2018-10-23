@@ -1,0 +1,22 @@
+class Values{
+	int id;
+	String name;
+}
+public class Practice {
+
+	public static void main(String[] args) {
+		Values v1=new Values();                   //create both the objects
+		Values v2=new Values();
+		
+		v1.id=101;                               
+		v1.name="Anirudh";                        //initialzing the two objects with respective values
+		v2.id=102;
+		v2.name="Lokapur";
+
+		System.out.println(v1.id+" "+v1.name);     //printing the values   
+		System.out.println(v2.id+" "+v2.name);
+		
+
+	}
+
+}

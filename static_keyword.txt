@@ -1,0 +1,20 @@
+
+public class CounterTest {
+	 static int count=0;
+	void counter(){
+		count++;
+		System.out.println(count);
+	}
+
+	public static void main(String[] args) {
+		CounterTest c1=new CounterTest();
+		CounterTest c2=new CounterTest();
+		CounterTest c4=new CounterTest();
+		c1.counter();
+		c2.counter();
+		c4.counter();
+		
+
+	}
+
+}

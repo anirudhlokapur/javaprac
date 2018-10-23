@@ -1,0 +1,32 @@
+class StudentTest{
+	int rollnumber;                   //initialize the data types
+	String name;
+	void insertRecord(int r,String n){  //method to insert values in the object.
+		rollnumber=r;                   //r and n are used as temporary variables and the
+		name=n;                         //values are stored in actual roll number and name
+	}
+	void displayInformation(){System.out.println(rollnumber+" "+name);
+	                       //this method is used to display the contents of the objects
+	}
+	
+}
+public class StudentDetails {
+
+	public static void main(String[] args) {
+		StudentTest s1=new StudentTest(); //creating the objects
+		StudentTest s2=new StudentTest();
+		StudentTest s3=new StudentTest();
+		
+		s1.insertRecord(0, "Anirudh");    //inserting the values in object using method
+		s2.insertRecord(1, "Lokapur");
+		s3.insertRecord(2,"....");
+		
+		s1.displayInformation();         //display the values using method
+		s2.displayInformation();
+		s3.displayInformation();
+		
+		
+
+	}
+
+}

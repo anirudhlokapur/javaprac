@@ -1,0 +1,27 @@
+
+public class SizeOfVariables {
+	int a;
+	byte b;
+	short c;
+	boolean d;
+	long e;
+	float f;
+	double g;
+	char h;
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      
+		SizeOfVariables obj= new SizeOfVariables();
+		System.out.println(obj.a);
+		System.out.println(obj.b);
+		System.out.println(obj.c);
+		System.out.println(obj.d);
+		System.out.println(obj.e);
+		System.out.println(obj.f);
+		System.out.println(obj.g);
+		System.out.println(obj.h);
+	}
+
+}

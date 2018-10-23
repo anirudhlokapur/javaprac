@@ -1,0 +1,13 @@
+
+public class Students {                        //create a class
+    int id=01;                                 //define instance variables
+    String name="Anirudh";
+    
+	public static void main(String[] args) {   //main method declaration
+	                                           
+		Students s1=new Students();            //creating a new object
+		
+		System.out.println(s1.id);
+		System.out.println(s1.name);           //displaying the object values
+
+	}

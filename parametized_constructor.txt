@@ -1,0 +1,27 @@
+public class Student1 {
+	//creating variables
+	int id;
+	String name;
+	//creating parameterized constructor
+	Student1(int i, String n){
+		id=i;
+		name=n;
+	}
+	//display method
+	void display(){System.out.println(id+" "+name);}
+
+	public static void main(String[] args) {
+		
+		//creating student objects
+		Student1 s=new Student1(101,"Anirudh");
+		Student1 a=new Student1(102,"Lokapur");
+		
+		//displaying the values
+		s.display();
+		a.display();
+		
+		
+
+	}
+
+}

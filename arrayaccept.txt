@@ -1,0 +1,28 @@
+5import java.util.Scanner;
+
+public class ArratTest {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		
+		
+		int a;
+		System.out.println("Enter the array length");
+		a=sc.nextInt();
+		
+		int[] arr= new int[a];
+		int i;
+		for(i=0;i<a;i++)
+			
+		{
+			System.out.println("enter the value "+ i);
+			arr[i]=sc.nextInt();
+		}
+		for(int b: arr)
+		{
+			System.out.println(b);
+		}	
+
+	}
+
+}

@@ -1,0 +1,302 @@
+Student.java
+
+package com.capgemini.bean;
+
+public class Student {
+    
+    private int rollNumber;
+    private String name;
+    private int noOfCourses;
+    private String[] courseNames;
+    
+    
+    public Student(int rollNumber, String name, int noOfCourses, String[] courseNames) {
+        super();
+        this.rollNumber = rollNumber;
+        this.name = name;
+        this.noOfCourses = noOfCourses;
+        this.courseNames = courseNames;
+    }
+    public int getRollNumber() {
+        return rollNumber;
+    }
+    public void setRollNumber(int rollNumber) {
+        this.rollNumber = rollNumber;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getNoOfCourses() {
+        return noOfCourses;
+    }
+    public void setNoOfCourses(int noOfCourses) {
+        this.noOfCourses = noOfCourses;
+    }
+    public String[] getCourseNames() {
+        return courseNames;
+    }
+    public void setCourseNames(String[] courseNames) {
+        this.courseNames = courseNames;
+    }
+    
+    
+}   
+    
+
+
+StudentSchedular.java
+
+package com.capgemini.service;
+
+import com.capgemini.bean.Student;
+
+public class StudentSchedular {
+    
+    private Student[] students = new Student[10];
+     
+      
+     
+    private int counterStudent;
+ 
+    public String addStudent(int rollNumber,String name,int noOfCourses,String[] courseNames)
+ 
+    {
+ 
+        students[counterStudent++]=new Student(rollNumber,name,noOfCourses,courseNames);
+        
+        return "Student added successfully";
+ 
+  
+ 
+    }
+ 
+  
+ 
+    public void showAllStudents()
+ 
+    {
+ 
+        for(int i=0;i<counterStudent;i++)
+ 
+        {
+            
+            System.out.println("Roll Number =" + students[i].getRollNumber());
+ 
+            System.out.println("Name =" + students[i].getName());
+        
+            System.out.println("No Of Courses =" + students[i].getNoOfCourses());
+            
+            for(int j=0;j<students[i].getCourseNames().length;j++){
+                int t=j+1;
+            System.out.println("Course"+t+":" + students[i].getCourseNames()[j]);
+        
+        }
+    }
+        
+    }       
+            
+    public void showByRollNumber(int rno) {
+        // TODO Auto-generated method stub
+        int flag=0;
+            for(int i=0;i<counterStudent;i++){
+                
+            
+            if(students[i].getRollNumber()==rno)
+            {
+                    
+                
+                System.out.println("Name =" +students[i].getName());
+                    flag++;
+            
+            } 
+            }if(flag==0)
+                System.out.println("Record not found!");
+            
+    }
+
+
+
+    public void showByCourse(String sub) {
+        // TODO Auto-generated method stub
+        int flag=0;
+        for(int i=0;i<counterStudent;i++){
+            
+            for(int j=0;j<students[i].getCourseNames().length;j++){
+                
+            
+            if((students[i].getCourseNames()[j]).equals(sub)==true)
+            {
+                System.out.println("Roll Number =" + students[i].getRollNumber());
+                System.out.println("Name =" + students[i].getName());
+                flag++;
+            }
+        }if(flag==0)
+            System.out.println("Records not found!");
+    }
+}
+    
+
+
+   public boolean isRollNumberPresent(int rollNumber)
+   {
+       for(int i=0;i<counterStudent;i++)
+       {
+           if(rollNumber==students[i].getRollNumber())
+               return true;
+       }
+       return false;
+   }
+
+
+
+}
+ 
+
+Admin.java
+
+package com.capgemini.view;
+
+import java.util.Scanner;
+
+import com.capgemini.service.StudentSchedular;
+
+public class Admin {
+
+    private static Scanner sc=new Scanner(System.in);
+     
+    private static StudentSchedular studSch = new StudentSchedular();
+ 
+  
+ 
+    public static void main(String[] args) {
+   
+ 
+        showMenu();
+ 
+  
+ 
+    }
+ 
+    private static void showMenu() {
+ 
+        int choice;
+ 
+        while(true)
+ 
+        {
+ 
+            System.out.println("1.add student");
+ 
+            System.out.println("2.Display details of all students");
+ 
+            System.out.println("3.Display Student name by Roll number");
+            
+            System.out.println("4.Display Student details by Course");
+ 
+            System.out.println("5.exit");
+ 
+            System.out.println("Enter your choice");
+ 
+            choice=sc.nextInt();
+ 
+            switch(choice)
+ 
+            {
+            
+            
+            case 1:addStudentDetails();
+                   break;
+ 
+             case 2:showAllStudents();
+ 
+                    break;
+                    
+             case 3:showByRollNumber();
+                    break;
+                    
+             case 4:showByCourse();
+                    break;
+              
+
+             case 5:System.exit(0);
+             
+             default:System.out.println("Sorry entered wrong choice");
+ 
+ 
+ 
+            }
+ 
+            
+ 
+        }
+ 
+  
+ 
+    }
+    
+    
+  private static void showByCourse() {
+        // TODO Auto-generated method stub
+        System.out.println("Enter course name:");
+        String sub=sc.next();
+        studSch.showByCourse(sub);
+    }
+
+    private static void showByRollNumber() {
+        
+        System.out.println("Enter rollnumber:");
+        int rno=sc.nextInt();
+        studSch.showByRollNumber(rno);
+        
+    }
+ 
+    private static void showAllStudents() {
+         
+        studSch.showAllStudents();
+        
+ 
+  
+ 
+    }
+    private static void addStudentDetails() {
+        
+        
+        System.out.println("Enter roll number");
+ 
+        int rollNumber=sc.nextInt();
+ if(!studSch.isRollNumberPresent(rollNumber)){
+     
+ 
+        System.out.println("Enter name");
+        String name = sc.next();
+        
+        System.out.println("How many courses do you want to register?");
+        int noOfCourses=sc.nextInt();
+        
+        System.out.println("Enter courses");
+        String[] courseNames= new String[noOfCourses];
+        for(int i=0;i<courseNames.length;i++){
+            courseNames[i]=sc.next();
+        }
+ 
+        System.out.println(studSch.addStudent(rollNumber, name,noOfCourses, courseNames));
+ 
+        
+ 
+  
+ 
+    }else
+        System.out.println("roll number already exists");
+ 
+    }
+        
+  }
+
+
+
+
+
+

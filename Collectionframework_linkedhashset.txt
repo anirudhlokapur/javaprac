@@ -1,0 +1,23 @@
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetTest {
+
+	public static void main(String[] args) {
+		LinkedHashSet<String> lhst=new LinkedHashSet<String>();
+		
+		lhst.add("Input");
+		lhst.add("values");
+		lhst.add("values");
+		lhst.add("into");
+		lhst.add("array");
+		lhst.add(null);
+		lhst.add(null);
+		
+		System.out.println(lhst);
+		
+		
+		
+
+	}
+
+}
